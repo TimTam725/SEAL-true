@@ -1,0 +1,31 @@
+CKKS_x^2_x_1.py
+    parms = EncryptionParameters(scheme_type.CKKS)
+    poly_modulus_degree = 8192
+    parms.set_poly_modulus_degree(poly_modulus_degree)
+    parms.set_coeff_modulus(CoeffModulus.Create(poly_modulus_degree, [60,40,40]))
+    context = SEALContext.Create(parms)
+    scale = pow(2.0, 40)
+
+CKKS_x^3_x^2_x_1.py
+    parms = EncryptionParameters(scheme_type.CKKS)
+    poly_modulus_degree = 8192
+    parms.set_poly_modulus_degree(poly_modulus_degree)
+    parms.set_coeff_modulus(CoeffModulus.Create(poly_modulus_degree, [60,40,40,60]))
+    context = SEALContext.Create(parms)
+    scale = pow(2.0, 40)
+
+CKKS-iris_diagonal_order.py
+    poly_modulus_degree = 8192
+    parms.set_poly_modulus_degree(poly_modulus_degree)
+    primes = [56,35,35,35,56]
+    parms.set_coeff_modulus(CoeffModulus.Create(poly_modulus_degree, primes))
+    context = SEALContext.Create(parms)
+    scale = pow(2.0, 35)
+
+CKKS-iris_SC.py
+    parms = EncryptionParameters(scheme_type.CKKS)
+    poly_modulus_degree = 1024
+    parms.set_poly_modulus_degree(poly_modulus_degree)
+    parms.set_coeff_modulus(CoeffModulus.Create(poly_modulus_degree, [18]))
+    context = SEALContext.Create(parms)
+    scale = pow(2.0, 15)
